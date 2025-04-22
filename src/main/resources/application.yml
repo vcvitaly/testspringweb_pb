@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: testspringweb
+
+server:
+  port: 8001

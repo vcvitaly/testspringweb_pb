@@ -17,6 +17,11 @@ public class TestController {
         return testService.getByteDto();
     }
 
+    @GetMapping(value = "/just-bytes", produces = {"application/json"})
+    public byte[] justBytes() {
+        return testService.getByteDto().data();
+    }
+
     @GetMapping("/hello-ints")
     public Dto<?> helloInts() {
         return testService.getIntDto();
