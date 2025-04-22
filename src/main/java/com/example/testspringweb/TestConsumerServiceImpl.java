@@ -19,7 +19,7 @@ public class TestConsumerServiceImpl implements TestConsumerService {
     public Dto<int[]> getIntArrayDto() {
         byte[] bytes = restClient.get()
                 .uri("/just-bytes")
-                .accept(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_OCTET_STREAM)
                 .retrieve()
                 .body(byte[].class);
 

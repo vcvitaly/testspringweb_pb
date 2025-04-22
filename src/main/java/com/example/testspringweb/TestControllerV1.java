@@ -1,6 +1,7 @@
 package com.example.testspringweb;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,7 @@ public class TestControllerV1 {
         return testService.getByteDto();
     }
 
-    @GetMapping(value = "/just-bytes", produces = {"application/json"})
+    @GetMapping(value = "/just-bytes", produces = {MediaType.APPLICATION_OCTET_STREAM_VALUE})
     public byte[] justBytes() {
         return testService.getByteDto().data();
     }
