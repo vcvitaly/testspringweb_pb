@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping
+@RequestMapping("/v1")
 @RequiredArgsConstructor
-public class TestController {
+public class TestControllerV1 {
 
     private final TestService testService;
 
