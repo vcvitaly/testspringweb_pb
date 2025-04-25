@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -24,7 +25,7 @@ public class TestControllerV1 {
     }
 
     @GetMapping("/hello-ints")
-    public Dto<?> helloInts() {
-        return testService.getIntDto();
+    public Dto<?> helloInts(@RequestParam("count") int count) {
+        return testService.getIntDto(count);
     }
 }

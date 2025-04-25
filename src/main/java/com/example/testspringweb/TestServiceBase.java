@@ -10,16 +10,16 @@ public class TestServiceBase implements TestService {
 
     @Override
     public Dto<byte[]> getByteDto() {
-        return new Dto<>(ArrayEncoder.encodeIntsToBytes(getIntArray(), false));
+        return new Dto<>(ArrayEncoder.encodeIntsToBytes(getIntArray(100), false));
     }
 
     @Override
-    public Dto<IntArrayList> getIntDto() {
-        int[] encoded = ArrayEncoder.encode(getIntArray(), false);
+    public Dto<IntArrayList> getIntDto(int count) {
+        int[] encoded = ArrayEncoder.encode(getIntArray(count), false);
         return new Dto<>(new IntArrayList(encoded));
     }
 
-    private int[] getIntArray() {
-        return IntStream.range(0, 100).toArray();
+    private int[] getIntArray(int count) {
+        return IntStream.range(0, count).toArray();
     }
 }
