@@ -9,8 +9,8 @@ import java.util.stream.IntStream;
 public class TestServiceBase implements TestService {
 
     @Override
-    public Dto<byte[]> getByteDto() {
-        return new Dto<>(ArrayEncoder.encodeIntsToBytes(getIntArray(100), false));
+    public Dto<byte[]> getByteDto(int count) {
+        return new Dto<>(ArrayEncoder.encodeIntsToBytes(getIntArray(count), false));
     }
 
     @Override
