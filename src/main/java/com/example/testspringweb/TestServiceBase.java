@@ -12,6 +12,7 @@ import java.util.stream.IntStream;
 public class TestServiceBase implements TestService {
 
     public TestServiceBase() {
+        log.info("TestServiceBase started");
         log.debug("Created from {}", ExceptionUtils.getStackTrace(new RuntimeException("CONTEXT")));
     }
 

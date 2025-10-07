@@ -1,9 +1,11 @@
 package com.example.testspringweb;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
+@Slf4j
 @Service
 public class TestConsumerServiceImpl implements TestConsumerService {
 
@@ -13,6 +15,7 @@ public class TestConsumerServiceImpl implements TestConsumerService {
         restClient = RestClient.builder()
                 .baseUrl("http://localhost:8001/v1")
                 .build();
+        log.info("TestConsumerServiceImpl started");
     }
 
     @Override
