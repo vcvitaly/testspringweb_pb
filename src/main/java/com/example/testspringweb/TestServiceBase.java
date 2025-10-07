@@ -1,12 +1,19 @@
 package com.example.testspringweb;
 
 import it.unimi.dsi.fastutil.ints.IntArrayList;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.stream.IntStream;
 
+@Slf4j
 @Service
 public class TestServiceBase implements TestService {
+
+    public TestServiceBase() {
+        log.debug("Created from {}", ExceptionUtils.getStackTrace(new RuntimeException("CONTEXT")));
+    }
 
     @Override
     public Dto<byte[]> getByteDto(int count) {

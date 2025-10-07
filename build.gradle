@@ -28,6 +28,8 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	implementation 'org.apache.commons:commons-lang3:3.14.0'
+
 	implementation 'me.lemire.integercompression:JavaFastPFOR:0.1.12'
 	implementation 'it.unimi.dsi:fastutil:8.2.2'
 
